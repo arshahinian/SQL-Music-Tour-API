@@ -1,0 +1,5 @@
+sequelize model:generate --name events --attributes "event_id:integer, name:string, date:date, start_time:date, end_time:date" --force true
+sequelize model:generate --name stages --attributes "stage_id:integer, stage_name:string" --force true
+sequelize model:generate --name stage_events --attributes "stage_events_id:integer, stage_id:integer, event_id:integer" --force true
+sequelize model:generate --name set_times --attributes "set_time_id:integer, event_id:integer, stage_id:integer, band_id:integer, start_time:date, end_time:date" --force true
+sequelize model:generate --name meet_greets --attributes "meet_greet_id:integer, event_id:integer, band_id:integer, meet_start_time:date, meet_end_time:date" --force true
