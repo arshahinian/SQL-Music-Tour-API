@@ -30,7 +30,8 @@ bands.get('/:name', async (req, res) => {
                     , as: "meet_greet_event"
                     , where: {name: {[Op.like]:  `%${req.query.event ? req.query.event : ''}%`}}
                 }
-            },{
+            }
+            ,{
                 model: SetTime
                 , as: "band_set_times",
                 include: {
@@ -38,6 +39,7 @@ bands.get('/:name', async (req, res) => {
                     , as: "set_time_event"
                     , where: {name: {[Op.like]:  `%${req.query.event ? req.query.event : ''}%`}}
                 }
+                
             }]
         })
         res.status(200).json(foundBand)
